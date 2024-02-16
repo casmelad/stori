@@ -46,7 +46,6 @@ func main() {
 	// start the scheduler
 	s.Start()
 
-	// block until you are ready to shut down TODO usar un canal
 	time.Sleep(50 * time.Second)
 
 	// when you're done, shut it down
