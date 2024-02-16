@@ -63,7 +63,7 @@ func startAccountBalanceProccess(log log.Logger) {
 func readTransactionsInfoFromFile(log log.Logger) []accounts.AccountTransaction {
 
 	fileReader := utilities.FileReader{}
-	fileContent, err := fileReader.ReadTransationLinesFromCsvFile("https://raw.githubusercontent.com/casmelad/LearningGo/master/activity.csv")
+	fileContent, err := fileReader.ReadTransationLinesFromCsvFile("https://raw.githubusercontent.com/casmelad/stori/main/txns.csv")
 	if err != nil {
 		fmt.Println(err)
 	}
