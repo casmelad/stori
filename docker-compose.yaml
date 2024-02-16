@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  fileproccessor:
+    container_name: filproccessor_service
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: go_service
+    environment:
+      - SMTP_PASSWORD=sxum ucta ycpx vvfe
+      - SMTP_USEREMAIL=storiuser@gmail.com
+      - SMTP_HOST=smtp.gmail.com
+      - SMTP_PORT=587
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_PORT=5432
+      - POSTGRES_HOST=postgres_server
+      - POSTGRES_DEFAULTDB=postgres
+    networks:
+      - fileproccessorenv
+    depends_on:
+      - postgresserver
+  postgresserver:
+    image: postgres
+    container_name: postgres_server
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DEFAULTDB=postgres
+    volumes:
+      - ./scripts/db/:/docker-entrypoint-initdb.d/
+    networks:
+      - fileproccessorenv
+    ports:
+      - 5432:5432
+networks:
+  fileproccessorenv: {}
