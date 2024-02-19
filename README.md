@@ -28,6 +28,8 @@ When ready, to build the images and run the container use the command as shown
 docker compose up
 ```
 
+once the application is running it will keep runing during 1 minute sending the email every 10 seconds
+
 ## Environment variables
 
 You can edit the next environment variables in teh docker-compose.yaml
@@ -42,6 +44,13 @@ You can edit the next environment variables in teh docker-compose.yaml
 ```
 
 There are more environment variables that are not recommended to be modified.
+
+## Test file
+
+You can always modify the csv file in order to test the email calculations
+
+[CSV File](https://github.com/casmelad/stori/blob/main/txns.csv)
+
 
 ## License
 
